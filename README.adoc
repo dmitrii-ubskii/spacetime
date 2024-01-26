@@ -1,0 +1,13 @@
+= Space and Time
+
+A color scheme for NeoVim, inspired by https://github.com/sjl/badwolf[Bad Wolf].
+
+== Screenshots
+
+Coming soon
+
+== Installation
+
+```
+Plug 'dmitrii-ubskii/spacetime'
+```
