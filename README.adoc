@@ -1,6 +1,7 @@
 = Space and Time
 
-A color scheme for NeoVim, inspired by https://github.com/sjl/badwolf[Bad Wolf].
+A dark color scheme with bright accents for NeoVim, inspired by
+https://github.com/sjl/badwolf[Bad Wolf].
 
 == Screenshots
 
