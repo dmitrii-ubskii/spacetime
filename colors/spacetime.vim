@@ -127,8 +127,8 @@ call s:HL('IncSearch', 'vanta', 'tardis')
 
 call s:HL('Underlined', 'fg', '', 'underline')
 
-call s:HL('StatusLine', 'vanta', 'tardis')
-call s:HL('StatusLineNC', 'snow', 'deepgravel')
+call s:HL('StatusLine', 'vanta', 'tardis', 'bold')
+call s:HL('StatusLineNC', 'snow', 'deepgravel', 'bold')
 
 call s:HL('Directory', 'dirtyblonde', '')
 
