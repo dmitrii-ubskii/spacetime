@@ -123,7 +123,7 @@ call s:HL('Visual', '', 'deepgravel')
 hi! link VisualNOS Visual
 
 call s:HL('Search', 'vanta', 'dalespale')
-call s:HL('IncSearch', 'vanta', 'tardis')
+call s:HL('IncSearch', 'vanta', 'tardis', 'none')
 
 call s:HL('Underlined', 'fg', '', 'underline')
 
