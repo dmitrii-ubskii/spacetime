@@ -239,10 +239,10 @@ call s:HL('PmenuThumb', 'brightgravel')
 " }}}
 " Diffs {{{
 
-call s:HL('DiffDelete', '', 'vanta')
-call s:HL('DiffAdd', '', 'deepergravel')
-call s:HL('DiffChange', '', 'darkgravel')
-call s:HL('DiffText', 'snow', 'deepergravel')
+call s:HL('DiffDelete', 'taffy', 'vanta')
+call s:HL('DiffAdd', 'snow', 'deepergravel')
+call s:HL('DiffChange', '', 'blackgravel') " text on a line with changes
+call s:HL('DiffText', 'olive', 'blackgravel') " actual changes
 
 " }}}
 " Spelling {{{
