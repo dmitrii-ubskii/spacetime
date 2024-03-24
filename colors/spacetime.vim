@@ -457,6 +457,7 @@ call s:HL('VimBracket', 'dress', '', 'none')
 
 " Rust {{{
 hi! link @lsp.mod.constant.rust Constant
+hi! link @constant.builtin.rust Constant
 hi! link @lsp.type.macro.rust Macro
 hi! link @type.builtin.rust Type
 " }}}
