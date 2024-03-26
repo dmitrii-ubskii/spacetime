@@ -455,6 +455,10 @@ call s:HL('VimBracket', 'dress', '', 'none')
 
 " }}}
 
+" Treesitter {{{
+hi! link @comment.todo Todo
+" }}}
+
 " Rust {{{
 hi! link @lsp.mod.constant.rust Constant
 hi! link @constant.builtin.rust Constant
