@@ -263,6 +263,10 @@ call s:HL('SignifySignAdd', 'lime', 'blackestgravel')
 call s:HL('SignifySignChange', 'orange', 'blackestgravel')
 call s:HL('SignifySignDelete', 'taffy', 'blackestgravel')
 " }}}
+" Treesitter {{{
+hi! link @comment.todo Todo
+hi! link @comment.error Todo
+" }}}
 " }}}
 
 " Filetype-specific {{{
@@ -453,10 +457,6 @@ call s:HL('VimMapModKey', 'dress', '', 'none')
 call s:HL('VimNotation', 'dress', '', 'none')
 call s:HL('VimBracket', 'dress', '', 'none')
 
-" }}}
-
-" Treesitter {{{
-hi! link @comment.todo Todo
 " }}}
 
 " Rust {{{
