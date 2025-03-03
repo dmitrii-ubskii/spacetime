@@ -55,6 +55,7 @@ let s:spc.coffee = ['#c7915b', 173]
 let s:spc.darkroast = ['#88633f', 95]
 
 " }}}
+
 " Highlighting Function {{{
 function! s:HL(group, fg, ...)
     " Arguments: group, guifg, guibg, gui, guisp
@@ -96,22 +97,19 @@ endfunction
 " Vanilla (Neo)Vim {{{
 
 " General/UI {{{
+call s:HL('Normal', 'plain', 'vanta', 'none')
+call s:HL('NormalFloat', 'plain', 'blackgravel', 'none')
 
-call s:HL('Normal', 'plain', 'vanta')
-call s:HL('NormalFloat', 'plain', 'blackgravel')
-
-call s:HL('NonText', 'deepgravel', 'bg')
+call s:HL('NonText', 'mediumgravel', 'bg', 'none')
 hi! link SpecialKey NonText
-" listchars
 hi! link Whitespace NonText
+hi! link Folded NonText
 
-call s:HL('CursorLine', '', 'blackestgravel', 'none')
+hi! link CursorLine LineNr
 hi! link CursorColumn CursorLine
 hi! link ColorColumn CursorLine
 
-call s:HL('Folded', 'mediumgravel', 'bg', 'none')
-
-call s:HL('VertSplit', 'lightgravel', 'bg', 'none')
+call s:HL('WinSeparator', 'gravel', 'bg', 'none')
 
 call s:HL('TabLine', 'plain', 'blackgravel', 'none')
 hi! link TabLineFill TabLine
@@ -119,144 +117,100 @@ call s:HL('TabLineSel', 'vanta', 'tardis', 'none')
 
 call s:HL('MatchParen', 'dress', 'bg', 'none')
 
-call s:HL('Visual', '', 'deepgravel')
+call s:HL('Visual', 'plain', 'deepgravel', 'none')
 hi! link VisualNOS Visual
 
 call s:HL('Search', 'vanta', 'dalespale', 'none')
 call s:HL('IncSearch', 'vanta', 'tardis', 'none')
 
-call s:HL('Underlined', 'fg', '', 'underline')
+call s:HL('StatusLine', 'vanta', 'tardis', 'none')
+call s:HL('StatusLineNC', 'snow', 'deepgravel', 'none')
+hi! link StatusLineTerm StatusLine
+hi! link StatusLineTermNC StatusLineNC
 
-call s:HL('StatusLine', 'vanta', 'tardis', 'bold')
-call s:HL('StatusLineNC', 'snow', 'deepgravel', 'bold')
+call s:HL('Directory', 'dirtyblonde', '', 'none')
 
-call s:HL('Directory', 'dirtyblonde', '')
+call s:HL('Title', 'lime', '', 'none')
 
-call s:HL('Title', 'lime')
-
-call s:HL('ErrorMsg', 'taffy', 'bg')
-call s:HL('MoreMsg', 'dirtyblonde', '')
-call s:HL('ModeMsg', 'dirtyblonde', '')
-call s:HL('Question', 'dirtyblonde', '')
-call s:HL('WarningMsg', 'dress', '')
-
+call s:HL('ErrorMsg', 'taffy', 'bg', 'none')
+call s:HL('ModeMsg', 'dirtyblonde', '', 'none')
+call s:HL('WarningMsg', 'dress', '', 'none')
+call s:HL('MoreMsg', 'dirtyblonde', '', 'none')
+hi! link Question MoreMsg
 " }}}
+
 " Gutter {{{
+call s:HL('LineNr', 'gravel', 'blackestgravel', 'none')
+hi! link CursorLineNr LineNr
 
-call s:HL('LineNr', 'mediumgravel', 'blackestgravel')
-call s:HL('CursorLineNr', 'brightgravel', 'blackestgravel')
-call s:HL('SignColumn', '', 'blackestgravel')
-call s:HL('FoldColumn', 'mediumgravel', 'blackestgravel')
-
+hi! link SignColumn LineNr
+hi! link FoldColumn LineNr
 " }}}
+
 " Cursor {{{
-
-call s:HL('Cursor', 'vanta', 'tardis')
-call s:HL('vCursor', 'vanta', 'tardis')
-call s:HL('iCursor', 'vanta', 'tardis', 'none')
-
+call s:HL('Cursor', 'vanta', 'tardis', 'none')
+hi! link lCursor Cursor
 " }}}
+
 " Syntax highlighting {{{
+call s:HL('Special', 'plain', '', 'none')
 
-" Start with a simple base.
-call s:HL('Special', 'plain')
+call s:HL('Todo', 'snow', 'danger', 'none')
+call s:HL('Comment', 'gravel', '', 'none')
 
-" Comments are slightly brighter than folds, to make 'headers' easier to see. 
-call s:HL('Comment', 'gravel')
-call s:HL('Todo', 'snow', 'danger')
-call s:HL('SpecialComment', 'snow', 'bg')
+call s:HL('Constant', 'toffee', '', 'none')
+call s:HL('String', 'dirtyblonde', '', 'none')
 
-" Strings are a nice, pale straw color. Nothing too fancy.
-call s:HL('String', 'dirtyblonde')
+call s:HL('Statement', 'taffy', '', 'none')
 
-" Control flow stuff is taffy.
-call s:HL('Statement', 'taffy', '')
-call s:HL('Keyword', 'taffy', '')
-call s:HL('Conditional', 'taffy', '')
-call s:HL('Operator', 'taffy', '', 'none')
-call s:HL('Label', 'taffy', '', 'none')
-call s:HL('Repeat', 'taffy', '', 'none')
-
-" Functions and variable declarations are orange, because plain looks weird.
 call s:HL('Identifier', 'orange', '', 'none')
-call s:HL('Function', 'orange', '', 'none')
 
-" Preprocessor stuff is lime, to make it pop.
-"
-" This includes imports in any given language, because they should usually be
-" grouped together at the beginning of a file. If they're in the middle of some
-" other code they should stand out, because something tricky is
-" probably going on.
 call s:HL('PreProc', 'lime', '', 'none')
-call s:HL('Macro', 'lime', '', 'none')
-call s:HL('Define', 'lime', '', 'none')
-call s:HL('PreCondit', 'lime', '')
-
-" Constants of all kinds are colored together.
-" I'm not really happy with the color yet...
-call s:HL('Constant', 'toffee', '')
-call s:HL('Character', 'toffee', '')
-call s:HL('Boolean', 'toffee', '')
-
-call s:HL('Number', 'toffee', '')
-call s:HL('Float', 'toffee', '')
-
-" Not sure what 'special character in a constant' means, but let's make it pop.
-call s:HL('SpecialChar', 'dress', '')
 
 call s:HL('Type', 'dress', '', 'none')
-call s:HL('Structure', 'dress', '', 'none')
 
-call s:HL('StorageClass', 'taffy', '', 'none')
-call s:HL('Typedef', 'taffy', '')
-
-" Make try/catch blocks stand out.
-call s:HL('Exception', 'lime', '')
-
-" Misc
-call s:HL('Error', 'snow', 'taffy')
-call s:HL('Debug', 'snow', '')
-call s:HL('Ignore', 'gravel', '', '')
-
-" LSP diagnostics
-call s:HL('DiagnosticError', 'snow', 'maroon')
-call s:HL('DiagnosticUnderlineError', 'snow', 'maroon')
-
-call s:HL('DiagnosticWarning', 'vanta', 'olive')
-call s:HL('DiagnosticUnderlineWarning', 'vanta', 'olive')
-
-call s:HL('DiagnosticInfo', 'vanta', 'saltwatertaffy')
-call s:HL('DiagnosticUnderlineInfo', 'vanta', 'saltwatertaffy')
-
+call s:HL('Error', 'snow', 'taffy', 'none')
 " }}}
-" Completion Menu {{{
 
+" Completion Menu {{{
 call s:HL('Pmenu', 'plain', 'deepergravel', 'none')
 call s:HL('PmenuSel', 'vanta', 'tardis', 'none')
-call s:HL('PmenuSbar', '', 'deepergravel')
-call s:HL('PmenuThumb', 'brightgravel')
-
+call s:HL('PmenuSbar', '', 'deepergravel', 'none')
+call s:HL('PmenuThumb', '', 'brightgravel', 'none')
+call s:HL('PmenuMatch', 'saltwatertaffy', 'deepergravel', 'none')
+call s:HL('PmenuMatchSel', 'vanta', 'tardis', 'none')
+hi! link WildMenu PmenuSel
 " }}}
-" Diffs {{{
 
-call s:HL('DiffDelete', 'taffy', 'vanta')
+" Diffs {{{
+call s:HL('DiffDelete', 'dress', 'vanta')
 call s:HL('DiffAdd', 'snow', 'deepergravel')
 call s:HL('DiffChange', '', 'blackgravel') " text on a line with changes
 call s:HL('DiffText', 'olive', 'blackgravel') " actual changes
 
-" }}}
-" Spelling {{{
+call s:HL('gitDiff', 'lightgravel', '',)
 
-if has("spell")
-    call s:HL('SpellCap', 'dalespale', 'bg', 'undercurl,bold', 'dalespale')
-    call s:HL('SpellBad', '', 'bg', 'undercurl', 'dalespale')
-    call s:HL('SpellLocal', '', '', 'undercurl', 'dalespale')
-    call s:HL('SpellRare', '', '', 'undercurl', 'dalespale')
-endif
+call s:HL('diffRemoved', 'dress', '', 'none')
+call s:HL('diffAdded', 'lime', '', 'none')
+call s:HL('diffFile', 'vanta', 'taffy', 'none')
+call s:HL('diffNewFile', 'vanta', 'taffy', 'none')
 
+call s:HL('diffLine', 'vanta', 'orange')
+call s:HL('diffSubname', 'orange', '', 'none')
 " }}}
 
+call s:HL('QuickFixLine', 'vanta', 'brightgravel', 'none')
+
+
+call s:HL('SpellCap', 'dalespale', 'bg', 'undercurl,bold', 'dalespale')
+call s:HL('SpellBad', '', 'bg', 'undercurl', 'dress')
+call s:HL('SpellLocal', '', '', 'none')
+call s:HL('SpellRare', '', '', 'none')
+
+call s:HL('Conceal', 'blackestgravel', 'gravel', 'none')
+call s:HL('Ignore', 'gravel', '', 'none')
 " }}}
+
 " Plugins {{{
 " Signify {{{
 call s:HL('SignifySignAdd', 'lime', 'blackestgravel')
