@@ -117,12 +117,12 @@ call s:HL('TabLine', 'plain', 'blackgravel', 'none')
 hi! link TabLineFill TabLine
 call s:HL('TabLineSel', 'vanta', 'tardis', 'none')
 
-call s:HL('MatchParen', 'dress', 'bg')
+call s:HL('MatchParen', 'dress', 'bg', 'none')
 
 call s:HL('Visual', '', 'deepgravel')
 hi! link VisualNOS Visual
 
-call s:HL('Search', 'vanta', 'dalespale')
+call s:HL('Search', 'vanta', 'dalespale', 'none')
 call s:HL('IncSearch', 'vanta', 'tardis', 'none')
 
 call s:HL('Underlined', 'fg', '', 'underline')
@@ -231,8 +231,8 @@ call s:HL('DiagnosticUnderlineInfo', 'vanta', 'saltwatertaffy')
 " }}}
 " Completion Menu {{{
 
-call s:HL('Pmenu', 'plain', 'deepergravel')
-call s:HL('PmenuSel', 'vanta', 'tardis')
+call s:HL('Pmenu', 'plain', 'deepergravel', 'none')
+call s:HL('PmenuSel', 'vanta', 'tardis', 'none')
 call s:HL('PmenuSbar', '', 'deepergravel')
 call s:HL('PmenuThumb', 'brightgravel')
 
