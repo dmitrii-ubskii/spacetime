@@ -263,10 +263,6 @@ call s:HL('SignifySignAdd', 'lime', 'blackestgravel')
 call s:HL('SignifySignChange', 'orange', 'blackestgravel')
 call s:HL('SignifySignDelete', 'taffy', 'blackestgravel')
 " }}}
-" Treesitter {{{
-hi! link @comment.todo Todo
-hi! link @comment.error Todo
-" }}}
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
