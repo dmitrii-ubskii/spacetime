@@ -122,8 +122,8 @@ hi! link VisualNOS Visual
 call s:HL('Search', 'void', 'radiance', 'none')
 call s:HL('IncSearch', 'void', 'tardis', 'none')
 
-call s:HL('StatusLine', 'void', 'tardis', 'none')
-call s:HL('StatusLineNC', 'snow', 'deepnebula', 'none')
+call s:HL('StatusLine', 'void', 'tardis', 'bold')
+call s:HL('StatusLineNC', 'snow', 'deepnebula', 'bold')
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
 
