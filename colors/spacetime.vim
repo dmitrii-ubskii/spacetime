@@ -104,7 +104,7 @@ hi! link SpecialKey NonText
 hi! link Whitespace NonText
 hi! link Folded NonText
 
-hi! link CursorLine LineNr
+call s:HL('CursorLine', '', 'deepernebula', 'none')
 hi! link CursorColumn CursorLine
 hi! link ColorColumn CursorLine
 
