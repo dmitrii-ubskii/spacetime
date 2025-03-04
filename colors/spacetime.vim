@@ -169,6 +169,10 @@ call s:HL('PreProc', 'gamma', '', 'none')
 call s:HL('Type', 'rosette', '', 'none')
 
 call s:HL('Error', 'snow', 'redshift', 'none')
+
+hi DiagnosticUnderlineHint cterm=none gui=none
+call s:HL('DiagnosticUnderlineError', 'snow', 'maroon', 'none')
+call s:HL('DiagnosticUnderlineWarn', 'void', 'flare', 'none')
 " }}}
 
 " Completion Menu {{{
@@ -214,6 +218,10 @@ call s:HL('Ignore', 'nebula', '', 'none')
 call s:HL('SignifySignAdd', 'gamma', 'blackestnebula')
 call s:HL('SignifySignChange', 'flare', 'blackestnebula')
 call s:HL('SignifySignDelete', 'redshift', 'blackestnebula')
+" }}}
+
+" Treesitter {{{
+hi! link @keyword.type Keyword
 " }}}
 " }}}
 
