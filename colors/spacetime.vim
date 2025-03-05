@@ -23,7 +23,7 @@ let s:spc.latte = ['#fff8e7', 15]
 
 let s:spc.snow = ['#ffffff', 15]
 
-let s:spc.brightnebula = ['#e7e7ed', 217]
+let s:spc.brightnebula = ['#e7e7ed', 252]
 let s:spc.lightnebula = ['#9a98b2', 245]
 let s:spc.nebula = ['#8280a0', 243]
 let s:spc.mediumnebula = ['#605e7e', 241]
@@ -170,9 +170,14 @@ call s:HL('Type', 'rosette', '', 'none')
 
 call s:HL('Error', 'snow', 'redshift', 'none')
 
+call s:HL('DiagnosticError', 'redshift', '', 'none')
+call s:HL('DiagnosticWarn', 'flare', '', 'none')
+call s:HL('DiagnosticInfo', 'uranus', '', 'none')
+call s:HL('DiagnosticHint', 'brightnebula', '', 'none')
+
+call s:HL('DiagnosticDeprecated', 'brightnebula', '')
+
 hi DiagnosticUnderlineHint cterm=none gui=none
-call s:HL('DiagnosticUnderlineError', 'snow', 'maroon', 'none')
-call s:HL('DiagnosticUnderlineWarn', 'void', 'flare', 'none')
 " }}}
 
 " Completion Menu {{{
