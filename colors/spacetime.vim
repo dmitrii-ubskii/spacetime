@@ -177,6 +177,7 @@ call s:HL('DiagnosticHint', 'brightnebula', '', 'none')
 
 call s:HL('DiagnosticDeprecated', 'brightnebula', '')
 
+call s:HL('DiagnosticUnderlineError', '', 'danger', 'none')
 hi DiagnosticUnderlineHint cterm=none gui=none
 " }}}
 
